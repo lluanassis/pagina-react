@@ -26,7 +26,12 @@ export const InfoRow = styled.div`
   grid-auto-columns: minmax(auto, 1fr);
   align-items: center;
   grid-template-areas: ${({ imgStart }) =>
-    imgStart ? `'col1' 'col2'` : `'col1 col2' 'col2 col2'`};
+    imgStart ? `'col2' 'col1'` : `'col1 col2'`};
+  
+  @media screen and (max-width: 768px) {
+    grid-template-areas: ${({ imgStart }) =>
+      imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
+  }
 `;
 
 export const Column1 = styled.div`
@@ -90,5 +95,5 @@ export const ImgWrap = styled.div`
 export const Img = styled.img`
   width: 100%;
   margin: 0 0 10px 0;
-  padding: 0;
+  padding-right: 0;
 `;
